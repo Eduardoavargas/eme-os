@@ -4,6 +4,7 @@ protegePagina(); // Chama a função que protege a página
 ?>
 <!DOCTYPE html>
 <head>
+<meta name="viewport" content="width=device-width, user-scalable=no">
 <meta charset="utf-8" />
 <title>EME-OS</title>
 <link rel="stylesheet" href="css/reset.css" />
