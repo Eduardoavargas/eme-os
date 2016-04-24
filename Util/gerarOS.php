@@ -128,5 +128,5 @@ if($OsDesconto!=null && $OsDesconto!=''){
 $os = new OS();
 $dados = $os->getServicos($OsId);
 //readfile("os.pdf");
-include("os.pdf");
+include("os.rtf");
 ?>
