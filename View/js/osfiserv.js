@@ -214,7 +214,7 @@
 			buttons: {
 				"Sim": function(){
 
-                                    go('logof.php')
+                                    go('../logout.php')
 				},
 				"Não": function() {
 					$( this ).dialog( "close" );

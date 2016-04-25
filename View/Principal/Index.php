@@ -1,4 +1,5 @@
 <?
+//include "../verifica_sessao.php";
 include_once("../Model/OS.php");
 include_once("../Model/Cliente.php");
 include_once("../Model/Funcionario.php");

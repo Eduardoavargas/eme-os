@@ -1,6 +1,6 @@
 <img src="./images/ver_os.png" border="0" class="hide2" id="ver_os_txt"/>
 	<div id="pagetop">
-            <div id="bar_top"><h6 style="direction: rtl"><? echo "Olá, " . $_SESSION['usuarioNome'];?></h6></div>
+            <div id="bar_top"><h6 style="direction: rtl"><? echo "Olá, " . $_SESSION['nome'];?></h6></div>
 		<div id="bar_top2" class="container_16">
 			<div id="logo_div" class="grid_4"><img class="logo" src="images/logo.png" border="0"/></div>
 			<div class="grid_12">

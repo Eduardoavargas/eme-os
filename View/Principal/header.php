@@ -1,6 +1,9 @@
 <?php
-include("./seguranca.php"); // Inclui o arquivo com o sistema de segurança
-protegePagina(); // Chama a função que protege a página
+//include("./seguranca.php"); // Inclui o arquivo com o sistema de segurança
+//protegePagina(); // Chama a função que protege a página
+
+//include "../verifica_sessao.php";
+
 ?>
 <!DOCTYPE html>
 <head>
