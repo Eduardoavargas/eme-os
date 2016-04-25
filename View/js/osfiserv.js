@@ -4,10 +4,14 @@
 			$("#ver_os_txt").offset({left:$(this).offset().left-45, top:$(this).offset().top}); $("#ver_os_txt").css("visibility","visible"); 
 		}, function(){$("#ver_os_txt").css("visibility","hidden");});
 		
-		$("body").click(function(){ $("#menu_funcionarios,#menu_clientes,#menu_os").slideUp('slow');});
-		$("#hover-clientes").click(function(){ $("#menu_funcionarios,#menu_os").slideUp('slow'); $("#menu_clientes").show(); return false; });
-		$("#hover-funcionarios").click(function(){ $("#menu_clientes,#menu_os").slideUp('slow'); $("#menu_funcionarios").show(); return false; });
-		$("#hover-os").click(function(){ $("#menu_funcionarios,#menu_clientes").slideUp('slow'); $("#menu_os").show(); return false; });		
+		$("body").click(function(){ $("#menu_fornecedores,#menu_funcionarios,#menu_clientes,#menu_os").slideUp('slow');});
+		$("#hover-clientes").click(function(){ $("#menu_fornecedores,#menu_funcionarios,#menu_os").slideUp('slow'); $("#menu_clientes").show(); return false; });
+                
+                $("#hover-fornecedores").click(function(){ $("#menu_funcionarios,#menu_clientes,#menu_os").slideUp('slow'); $("#menu_fornecedores").show(); return false; });
+                
+		$("#hover-funcionarios").click(function(){ $("#menu_fornecedores,#menu_clientes,#menu_os").slideUp('slow'); $("#menu_funcionarios").show(); return false; });
+               
+		$("#hover-os").click(function(){ $("#menu_fornecedores,#menu_funcionarios,#menu_clientes").slideUp('slow'); $("#menu_os").show(); return false; });		
 		
 		$("#OsVeiculoPlaca").mask("aaa-9999");
 		$("#OsVeiculoAnoModelo").mask("9999/9999");
@@ -29,6 +33,13 @@
 		});
 		$( ".funcionarios_c" ).click(function() {
 			$( "#cadastrar_funcionario" ).dialog( "open" );
+			$("#cpf_func").mask("999.999.999-99");
+			$("#nascimento_func").mask("99/99/9999");
+			$("#telefone_func,#celular_func").mask("(99) 9999-9999");
+			return false;
+		});
+                $( ".fornecedores_c" ).click(function() {
+			$( "#cadastrar_fornecedor" ).dialog( "open" );
 			$("#cpf_func").mask("999.999.999-99");
 			$("#nascimento_func").mask("99/99/9999");
 			$("#telefone_func,#celular_func").mask("(99) 9999-9999");
@@ -123,7 +134,24 @@
 				
 			} 
 		});
-		
+		/*Dialog - cadastrar fornecedor*/
+		$("#cadastrar_fornecedor").dialog({
+			modal: true,
+			draggable: false,
+			autoOpen: false,
+			width: "450px", 
+			buttons: {
+				"Cadastrar": function(){
+					$("#cad_fornecedor_form").submit();
+				},
+				"Cancelar": function() {
+					$( this ).dialog( "close" );
+				}
+			},
+			close: function() {
+				
+			} 
+		});
 		/*Dialog - configuracoes*/
 		$("#configuracoes").dialog({
 			modal: true,

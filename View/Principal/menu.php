@@ -16,6 +16,17 @@
 								</ul>
 							</div>
 					</div>
+                                            </li>
+					<li class="inblock menu">
+					<div id="hover-fornecedores">
+						<a href="#" id="fornecedores">Fornecedores</a>
+							<div id="menu_fornecedores" class="hide">
+								<ul class="menus">
+									<li class="fornecedores_c"><a href="#" class="fornecedores_c">Cadastrar</a></li>
+									<li class="fornecedores_p"><a href="#" class="fornecedores_p">Pesquisar</a></li>
+								</ul>
+							</div>
+					</div>
 					</li>
 					<li class="inblock menu">
 					<div id="hover-funcionarios">

@@ -179,6 +179,14 @@ label.carro{
 	text-align: center;
 	z-index: 999;
 }
+#menu_fornecedores{
+	position: absolute;
+	margin: 2px 0 0 -1px;
+	text-decoration: none;
+	width: 108px;
+	text-align: center;
+	z-index: 999;
+}
 #menu_os{
 	position: absolute;
 	margin: 2px 0 0 -1px;
