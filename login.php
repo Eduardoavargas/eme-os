@@ -81,6 +81,7 @@ if(!empty($retorno) && password_verify($senha, $retorno->senha)):
 	$_SESSION['id'] = $retorno->id;
 	$_SESSION['nome'] = $retorno->nome;
 	$_SESSION['email'] = $retorno->email;
+        $_SESSION['nivel'] = $retorno->nivel;
 	$_SESSION['tentativas'] = 0;
 	$_SESSION['logado'] = 'SIM';
 else:
