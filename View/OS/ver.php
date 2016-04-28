@@ -80,7 +80,8 @@
 		$("#OK_OS").click(function() { $("#nova_ordem_de_servico").submit(); });
 		$("#CANCEL_OS").click(function() { go("./"); });
 		$("#IMPRIMIR_OS").click(function() { 
-			go("../Util/gerarOS.php?OsId=<? echo $OsId; ?>");
+			//go("../Util/gerarOS.php?OsId=<? echo $OsId; ?>");
+                        go("../Util/imprimir.php?OsId=<? echo $OsId; ?>");
 				return false;
 		});
 		$("#FECHAR_OS").click(function() {
