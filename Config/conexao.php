@@ -5,8 +5,8 @@
  define('HOST', 'localhost');  
  define('DBNAME', 'os');  
  define('CHARSET', 'utf8');  
- define('USER', 'root');  
- define('PASSWORD', '');  
+ define('USER', 'oficina');  
+ define('PASSWORD', '102030');  
  
  class Conexao {  
  

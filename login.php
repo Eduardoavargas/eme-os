@@ -8,7 +8,7 @@ define('TENTATIVAS_ACEITAS', 5);
 define('MINUTOS_BLOQUEIO', 30); 
  
 // Require da classe de conexão
-require 'Config/conexao.php';
+require'Config/conexao.php';
  
  
 // Dica 1 - Verifica se a origem da requisição é do mesmo domínio da aplicação
@@ -81,7 +81,7 @@ if(!empty($retorno) && password_verify($senha, $retorno->senha)):
 	$_SESSION['id'] = $retorno->id;
 	$_SESSION['nome'] = $retorno->nome;
 	$_SESSION['email'] = $retorno->email;
-        $_SESSION['nivel'] = $retorno->nivel;
+     //   $_SESSION['nivel'] = $retorno->nivel;
 	$_SESSION['tentativas'] = 0;
 	$_SESSION['logado'] = 'SIM';
 else:
