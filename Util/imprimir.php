@@ -6,6 +6,7 @@ $endEmpresa = strtoupper("Endereço da Emepresa");
 $fone = "FONE: (00) 0000-0000";
 $cnpj = "00.000.000/0000-00";
 
+include '../Config/config.php';
 include_once("../Model/Model.php");
 include_once("../Model/Cliente.php");
 include_once("../Model/Funcionario.php");
@@ -115,12 +116,12 @@ $cliente = null;
 $dados = null;
 
 
-$OsSubTotal = number_format($OsSubTotal, 2, '.', '');
-$OsTotal = number_format($OsTotal, 2, '.', '');
+$OsSubTotal = number_format($OsSubTotal, 2, ',', '');
+$OsTotal = number_format($OsTotal, 2, ',', '');
 if ($OsDesconto != null && $OsDesconto != '') {
-    $OsDesconto = number_format($OsDesconto, 2, '.', '');
+    $OsDesconto = number_format($OsDesconto, 2, ',', '');
 } else {
-    $OsDesconto = '0.00';
+    $OsDesconto = '0,00';
 }
 
 //$os = new OS();
@@ -141,12 +142,13 @@ if ($OsDesconto != null && $OsDesconto != '') {
       <tbody>
         <tr>
           <td>
-            <img class="imglogo"src=http://aveletronic.com.br/loja/image/data/Logotipo/iconeOsNet.jpg></td>
+            <img height="100" width="130" class="imglogo"src="../View/images/logoOS2.bmp"></td>
           <td style="text-align: center"> <span style="font-size: 20px;  "> MECANICA AMADEU</span><br/>
+             <span>CNPJ: 13.435.608/0001-90</span><br/>
    <span>Osório Gonçalves viana, 255 - CEP 88370356 <br>Centro -  Navegantes - SC</span><br>
    <span> contato@mecanicaamadeu.com.br <br/>(47) 3342-2820</span>
           </td>
-<td style="text-align: right">Ordem de Serviço Nº: <span ><?php echo $OsId; ?></span><br> <br> <span>Emissão: <?php echo date('d/m/Y') ?></span></td>
+          <td style="text-align: right">Ordem de Serviço Nº: <span ><b><?php echo $OsId; ?></b></span><br> <br><br> <br> <span>Emissão: <?php echo date('d/m/Y H:i:s') ?></span></td>
  </tr>              
       </tbody> 
        </table><br/>
@@ -166,7 +168,7 @@ if ($OsDesconto != null && $OsDesconto != '') {
                                     <td style="width: 50%; padding-left: 0">
                                         <ul>
                                            
-                                              <br/>
+                                             
                                           <span>CPF: <? echo $ClienteCpfOrCnpj;?></span> <br/>
                                            <span>Telefone: <? echo $ClienteTelefone;?></span><br/>
                                                 <span>Celular: <? echo $ClienteObs;?></span>
@@ -194,7 +196,7 @@ if ($OsDesconto != null && $OsDesconto != '') {
                                     <td style="width: 50%; padding-left: 0">
                                         <ul>
                                            
-                                              <br/>
+                                              
                                           <span>KM:</span> <br/>
                                            <span>Ano: <? echo $OsVeiculoAnoModelo;?></span><br/>
                                           <span>Obs: </span>
@@ -206,11 +208,27 @@ if ($OsDesconto != null && $OsDesconto != '') {
                                                           
                         </table> <br/><br/>
       <div class="datagrid"><table>
-              <thead><tr><th>Cod.</th><th WIDTH="500" >Descrição</th><th>Valor</th><th>Quant.</th><th>Total</th></tr></thead>
+              <thead><tr>
+                      <th WIDTH="10%">Item</th>
+                      <th WIDTH="40%" >Descrição</th>
+                      <th WIDTH="10%">Valor Un.</th>
+                      <th WIDTH="10%">Quant.</th>
+                      <th WIDTH="10%">Valor Total</th>
+                  </tr>
+              </thead>
 
-<tbody><? $os = new OS();
+<tbody>
+    <tr><td></td><td></td><td></td><td></td><td></td></tr>
+    <? $os = new OS(); $i=0;
 $dados = $os->getServicos($OsId);
-    foreach ($dados as $row) {?><tr><td>data</td><td><? echo $row['ServicoNome']; ?></td><td>data</td><td>data</td><td>data</td><?}?></tr>
+    foreach ($dados as $row) {?>
+    <tr><td><?$i++;echo $i;?></td>
+        <td align="left"><? echo $row['ServicoNome']; ?></td>
+        <td align="center"><? echo  number_format($row['ServicoValor'], 2, ',', ''); ?></td>
+        <td align="center"><? echo $row['ServicoQtd']; ?></td>
+        <td align="center"><? $vlruni = $row['ServicoValor'] * $row['ServicoQtd']; echo  number_format($vlruni, 2, ',', ''); ?></td>
+            <?}?>
+    </tr>
   
     </tbody>
 </table></div>
@@ -218,22 +236,59 @@ $dados = $os->getServicos($OsId);
       
     </div>
     </div>
-    <br/>
-    <br/>
-    
-</body>
+        
+        </table>
 
+
+      
+                <br><TABLE align="right" CELLSPACING="5" CELLPADDING="2" BORDER="1">
+  <TR BORDER="1">
+    <TD align="right">SubTotal:</TD>
+    <TD align="right">R$: <?echo $OsSubTotal;?></TD>
+  </TR>
+  <? if ($OsDesconto > 0){?>
+  <TR BORDER="1">
+    <TD align="right">Descontos:</TD>
+      <TD align="right">R$: <? echo $OsDesconto;?></TD>
+  </TR>
+  <?}?>
+  <TR BORDER="1">
+    <TD align="right">Total a pagar:</TD>
+    <TD align="right">R$: <? echo $OsTotal;?></TD>
+  </TR> 
+
+</TABLE>
+    
+    <br/>
+    <br/>
+   
+   
+</body>
+    <br/>
+    <br/><br/>
+    <br/>
+    <TABLE align="center"  width="90%"  >
+  
+      <tr>
+        <td align="center"><hr size="2" WIDTH=60% ALIGN=center /></td>
+      <td align="center"><hr size="2" WIDTH=60% ALIGN=center /></td>
+      </tr>
+<TR>
+    <TD align="center">Responsável</TD>
+    <TD align="center"><? echo $ClienteNome;?></TD>
+  </TR>
+</TABLE>
+</div>
 
 <script type="text/javascript">
 
-    var conteudo = document.getElementById("printOs").innerHTML;
+  var conteudo = document.getElementById("printOs").innerHTML;
     var win = window.open();
      win.document.write("<link rel='stylesheet' href='../View/css/imprimirOs.css' />");
     win.document.write(conteudo);
     win.print();
     win.close();//Fecha após a impressão. 
-
-
+;
 
 </script>
   </html>

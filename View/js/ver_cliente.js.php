@@ -9,7 +9,7 @@ $(document).ready(function(){
 					go("./?page=OS&action=nova&id_cliente_os=<? echo $clienteId; ?>");
 					
 				},
-				"Voltar": function(){
+				"Ir para Inicio": function(){
 					go("./");
 				}
 			},

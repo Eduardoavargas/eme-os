@@ -81,8 +81,11 @@
 		$("#CANCEL_OS").click(function() { go("./"); });
 		$("#IMPRIMIR_OS").click(function() { 
 			//go("../Util/gerarOS.php?OsId=<? echo $OsId; ?>");
-                        go("../Util/imprimir.php?OsId=<? echo $OsId; ?>");
-				return false;
+                        
+    var win = window.open("../Util/imprimir.php?OsId=<? echo $OsId; ?>");
+     //win.close();
+    //win.go("../Util/imprimir.php?OsId=<? echo $OsId; ?>");
+				return true;
 		});
 		$("#FECHAR_OS").click(function() {
 			$(".os_f").click();
@@ -143,7 +146,12 @@
 						<tr>
 							<td><? echo $OsVeiculoPlaca[0].$OsVeiculoPlaca[1].$OsVeiculoPlaca[2].'-'.$OsVeiculoPlaca[3].$OsVeiculoPlaca[4].$OsVeiculoPlaca[5].$OsVeiculoPlaca[6]; ?></td>
 							<td><? echo $OsVeiculoCor; ?></td>
-							<td><? if($OsVeiculoAnoModelo!='')	echo $OsVeiculoAnoModelo['0'].$OsVeiculoAnoModelo['1'].$OsVeiculoAnoModelo['2'].$OsVeiculoAnoModelo['3'].'/'.$OsVeiculoAnoModelo['4'].$OsVeiculoAnoModelo['5'].$OsVeiculoAnoModelo['6'].$OsVeiculoAnoModelo['7']; else echo '--'; ?></td>
+                                                        <td><?                                                             if ($OsVeiculoAnoModelo != '') {
+                                                                echo $OsVeiculoAnoModelo['0'] . $OsVeiculoAnoModelo['1'] . $OsVeiculoAnoModelo['2'] . $OsVeiculoAnoModelo['3'] . '/' . $OsVeiculoAnoModelo['4'] . $OsVeiculoAnoModelo['5'] . $OsVeiculoAnoModelo['6'] . $OsVeiculoAnoModelo['7'];
+                                                            } else {
+                                                                echo '--';
+                                                            }
+                                                            ?></td>
 						<tr>
 					</table>					
 				</div>

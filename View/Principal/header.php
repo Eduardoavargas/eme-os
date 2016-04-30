@@ -3,12 +3,12 @@
 //protegePagina(); // Chama a função que protege a página
 
 //include "../verifica_sessao.php";
-
+ header("Content-type: text/html; charset=utf-8");
 ?>
 <!DOCTYPE html>
 <head>
 <meta name="viewport" content="width=device-width, user-scalable=no">
-<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>EME-OS</title>
 <link rel="stylesheet" href="css/reset.css" />
 <link rel="stylesheet" href="css/text.css" />

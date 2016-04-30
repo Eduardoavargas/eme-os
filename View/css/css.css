@@ -234,11 +234,11 @@ label.carro{
 	margin-bottom: 0px !important; 
 }
 placa_carro{
-	text-transform: uppercase;
+	
 }
 input,textarea{
 	font-family: Segoe UI, Arial, Verdana !important;
-	text-transform: uppercase;
+	
 }
 select{
 	font-family: Segoe UI, Arial, Verdana !important;

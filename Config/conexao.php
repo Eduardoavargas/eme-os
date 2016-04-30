@@ -10,7 +10,8 @@
  
  class Conexao {  
  
-   /*  
+   /*  mysql_set_charset('utf8');
+
     * Atributo estático para instância do PDO  
     */  
    private static $pdo;
