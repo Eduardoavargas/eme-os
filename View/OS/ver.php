@@ -70,7 +70,6 @@
 	}
 	$cliente = null;
 	$dados = null;
-
 ?>
 <script>
 	var cont = 2;
@@ -84,7 +83,7 @@
                         
     var win = window.open("../Util/imprimir.php?OsId=<? echo $OsId; ?>");
      //win.close();
-    //win.go("../Util/imprimir.php?OsId=<? echo $OsId; ?>");
+    //wmin.go("../Util/imprimir.php?OsId=<? echo $OsId; ?>");
 				return true;
 		});
 		$("#FECHAR_OS").click(function() {
