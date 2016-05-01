@@ -52,6 +52,7 @@ endif;
 // Dica 4 - Verifica se o usuário já excedeu a quantidade de tentativas erradas do dia
 $sql = "SELECT count(*) AS tentativas, MINUTE(TIMEDIFF(NOW(), MAX(data_hora))) AS minutos ";
 $sql .= "FROM log_tentativa WHERE ip = ? and DATE_FORMAT(data_hora,'%Y-%m-%d') = ? AND bloqueado = ?";
+/* @var $stm type */
 $stm = $conexao->prepare($sql);
 $stm->bindValue(1, $_SERVER['SERVER_ADDR']);
 $stm->bindValue(2, date('Y-m-d'));
