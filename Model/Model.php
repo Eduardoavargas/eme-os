@@ -1,13 +1,10 @@
 <?
-  require '../Config/conexao.php';
 class Model extends PDO{
-  
 	var $conexao;
 	
 	public function conectar(){
-		//$this->conexao = new PDO('mysql:host=localhost;dbname=os', 'oficina','102030');
-		//$this->conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-           $this->conexao = Conexao::getInstance();
+		$this->conexao = new PDO('mysql:host=localhost;dbname=os', 'oficina','102030');
+		$this->conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	}
 	
 	public function desconectar(){

@@ -9,7 +9,7 @@ $(document).ready(function(){
 					go("./?page=OS&action=ver&OsId=<? echo $OsId; ?>");
 					
 				},
-				"Ir para Inicio": function(){
+				"Voltar": function(){
 					go("./");
 				}
 			},

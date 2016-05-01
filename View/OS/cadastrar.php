@@ -37,7 +37,7 @@ if($_POST){
 			$OsServicoQtd  = $_POST['OsServicoQtd'.$i];
 			$OsServicoValor  = $_POST['OsServicoValor'.$i];
 			if($Servico!='' && $OsServicoQtd!='' && $OsServicoValor!=''){
-				$OsServicos[$i]['ServicoNome'] = $Servico;
+				$OsServicos[$i]['ServicoNome'] = strtoupper($Servico);
 				$OsServicos[$i]['ServicoQtd'] = $OsServicoQtd;
 				$OsServicos[$i]['ServicoValor'] = $OsServicoValor;
 				$OsSubTotal+= ($OsServicoQtd*$OsServicoValor);

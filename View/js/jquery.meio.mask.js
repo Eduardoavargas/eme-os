@@ -326,7 +326,7 @@
 			},
 			
 			_onChange: function(e){
-				$(this).data('mask').changed = false;
+				$(this).data('mask').changed = true;
 			},
 			
 			_onMask : function(e){
@@ -680,5 +680,4 @@
 		}
 	});
 })(jQuery);
-
-
+

@@ -70,6 +70,7 @@
 	}
 	$cliente = null;
 	$dados = null;
+
 ?>
 <script>
 	var cont = 2;
@@ -79,12 +80,8 @@
 		$("#OK_OS").click(function() { $("#nova_ordem_de_servico").submit(); });
 		$("#CANCEL_OS").click(function() { go("./"); });
 		$("#IMPRIMIR_OS").click(function() { 
-			//go("../Util/gerarOS.php?OsId=<? echo $OsId; ?>");
-                        
-    var win = window.open("../Util/imprimir.php?OsId=<? echo $OsId; ?>");
-     //win.close();
-    //wmin.go("../Util/imprimir.php?OsId=<? echo $OsId; ?>");
-				return true;
+			go("../Util/gerarOS.php?OsId=<? echo $OsId; ?>");
+				return false;
 		});
 		$("#FECHAR_OS").click(function() {
 			$(".os_f").click();
@@ -145,12 +142,7 @@
 						<tr>
 							<td><? echo $OsVeiculoPlaca[0].$OsVeiculoPlaca[1].$OsVeiculoPlaca[2].'-'.$OsVeiculoPlaca[3].$OsVeiculoPlaca[4].$OsVeiculoPlaca[5].$OsVeiculoPlaca[6]; ?></td>
 							<td><? echo $OsVeiculoCor; ?></td>
-                                                        <td><?                                                             if ($OsVeiculoAnoModelo != '') {
-                                                                echo $OsVeiculoAnoModelo['0'] . $OsVeiculoAnoModelo['1'] . $OsVeiculoAnoModelo['2'] . $OsVeiculoAnoModelo['3'] . '/' . $OsVeiculoAnoModelo['4'] . $OsVeiculoAnoModelo['5'] . $OsVeiculoAnoModelo['6'] . $OsVeiculoAnoModelo['7'];
-                                                            } else {
-                                                                echo '--';
-                                                            }
-                                                            ?></td>
+							<td><? if($OsVeiculoAnoModelo!='')	echo $OsVeiculoAnoModelo['0'].$OsVeiculoAnoModelo['1'].$OsVeiculoAnoModelo['2'].$OsVeiculoAnoModelo['3'].'/'.$OsVeiculoAnoModelo['4'].$OsVeiculoAnoModelo['5'].$OsVeiculoAnoModelo['6'].$OsVeiculoAnoModelo['7']; else echo '--'; ?></td>
 						<tr>
 					</table>					
 				</div>

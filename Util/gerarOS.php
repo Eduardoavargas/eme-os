@@ -1,11 +1,8 @@
 <?
-header( "content-type:application/msword" );
-//header( "content-type:application/pdf" );
-//header("Content-Disposition:attachment;filename='downloaded.pdf'");
-
+header( "content-type: application/msword" );
 $empresa = strtoupper("EMPRESA");
-$endEmpresa = strtoupper("Endereço da Emepresa");
-$fone = "FONE: (00) 0000-0000";
+$endEmpresa = strtoupper("1206 SUL ALAMEDA 13 CASA 05 - PALMAS - TO");
+$fone = "FONE: (63) 0000-0000";
 $cnpj = "00.000.000/0000-00";
 
 include_once("../Model/Model.php");
@@ -127,6 +124,6 @@ if($OsDesconto!=null && $OsDesconto!=''){
 
 $os = new OS();
 $dados = $os->getServicos($OsId);
-//readfile("os.pdf");
+
 include("os.rtf");
 ?>

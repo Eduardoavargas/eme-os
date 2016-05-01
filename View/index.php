@@ -1,7 +1,4 @@
 <? 
-//session_start();
-
-include ("../verifica_sessao.php");
 	require("../Model/Model.php");
 	require("../Util/Util.php");
 	require("Principal/header.php");

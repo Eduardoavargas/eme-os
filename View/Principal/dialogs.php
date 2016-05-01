@@ -35,21 +35,6 @@
 		</div>
 	</div>
 </div>
-<div id="pfornecedores" title="Pesquisar fornecedor" class="hide">
-	<form name="pclientes_form" method="post" action="./">
-	<fieldset>
-		<label for="nome">Nome</label><br>
-		<input type="text" name="nome" id="nome" class="text ui-widget-content ui-corner-all" style="width: 100%"/><br>
-		<label for="cnpj">CNPJ</label><br>
-		<input type="text" name="cnpj" id="cnpj" value="" class="text ui-widget-content ui-corner-all" style="width: 100%"/>
-	</fieldset>
-	</form>
-	<div class="ui-widget">
-		<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding:0.7em; height: 38px;">
-			<p class="alerta">Você deve digitar pelo menos um dos campos de busca.</p>
-		</div>
-	</div>
-</div>
 <div id="pos" title="Pesquisar ordem de serviço" class="hide">
 	<form name="pos_form" id="pos_form" method="post" action="./?page=OS&action=pesquisar">
 	<input type="text" name="pos_cliente_id" id="pos_cliente_id" style="display: none"/>
@@ -311,38 +296,6 @@
 			<option value="2">Mecânico</option>
 			<option value="3">Outro</option>
 		</select>
-	</form>
-	<div class="ui-widget">
-		<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding:0.7em; height: 20px;">
-			<p class="alerta">Obrigatório preenchimento dos campos com * (asterisco).</p>
-		</div>
-	</div>
-</div>
-<div id="cadastrar_fornecedor" title="Cadastrar dornecedor" class="hide">
-<form name="cad_fornecedor_form" id="cad_fornecedor_form" method="post" action="./?page=Fornecedor&action=cadastrar">
-	<label>Nome do fornecedor*</label><br>
-		<input type="text" style="width: 100%" name="nome_forn" id="nome_forn" value="" class="text ui-widget-content ui-corner-all" onkeypress='return somenteLetras(event)'/>
-		<table class="boxDialog" width="100%">
-			
-			<tr>
-				<td width="200px"><label for="nome">CNPJ</label></td>
-				
-			</tr>
-			<tr>
-				<td><input type="text" style="width: 95%" name="cpf_forn" id="cpf_func" value="" class="text ui-widget-content ui-corner-all" /></td>
-				<td><input type="text" style="width: 100%" name="rg_forn" id="rg_func" value="" class="text ui-widget-content ui-corner-all" /></td>
-			</tr>
-		</table>
-		<table class="boxDialog">
-			<tr>
-				<td width="200px">Telefone</td>
-				<td width="222px">Celular</td>
-			</tr>
-			<tr>
-				<td><input type="text" style="width: 95%" name="telefone_forn" id="telefone_func" value="" class="text ui-widget-content ui-corner-all" /></td>
-				<td><input type="text" style="width: 100%" name="celular_forn" id="celular_func" value="" class="text ui-widget-content ui-corner-all" /></td>
-			</tr>
-		</table>
 	</form>
 	<div class="ui-widget">
 		<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding:0.7em; height: 20px;">

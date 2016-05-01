@@ -1,6 +1,6 @@
 <img src="./images/ver_os.png" border="0" class="hide2" id="ver_os_txt"/>
 	<div id="pagetop">
-            <div id="bar_top"><h6 style="direction: rtl"><? echo "Olá, " . $_SESSION['nome'];?></h6></div>
+		<div id="bar_top"><? echo "Olá, " . $_SESSION['usuarioNome'];?></div>
 		<div id="bar_top2" class="container_16">
 			<div id="logo_div" class="grid_4"><img class="logo" src="images/logo.png" border="0"/></div>
 			<div class="grid_12">
@@ -13,17 +13,6 @@
 								<ul class="menus">
 									<li class="clientes_c"><a href="#" class="clientes_c">Cadastrar</a></li>
 									<li class="clientes_p"><a href="#" class="clientes_p">Pesquisar</a></li>
-								</ul>
-							</div>
-					</div>
-                                            </li>
-					<li class="inblock menu">
-					<div id="hover-fornecedores">
-						<a href="#" id="fornecedores">Fornecedores</a>
-							<div id="menu_fornecedores" class="hide">
-								<ul class="menus">
-									<li class="fornecedores_c"><a href="#" class="fornecedores_c">Cadastrar</a></li>
-									<li class="fornecedores_p"><a href="#" class="fornecedores_p">Pesquisar</a></li>
 								</ul>
 							</div>
 					</div>
