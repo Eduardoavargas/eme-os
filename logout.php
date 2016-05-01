@@ -1,5 +1,5 @@
 <?php
-
+//j
 session_start();
 session_destroy();
  
