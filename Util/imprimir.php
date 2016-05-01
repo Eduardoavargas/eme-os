@@ -288,7 +288,6 @@ $dados = $os->getServicos($OsId);
     win.document.write(conteudo);
     win.print();
     win.close();//Fecha após a impressão. 
-;
 
 </script>
   </html>
