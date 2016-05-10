@@ -1,7 +1,8 @@
 
 <?php
-//include("./Login/seguranca.php"); // Inclui o arquivo com o sistema de segurança
+//include("../Util/buscaCep.php"); 
 //protegePagina(); // Chama a função que protege a página
+
 ?>
 
 <!-- Inicio - Dialog das Pesquisas -->
@@ -16,7 +17,7 @@
 	</form>
 	<div class="ui-widget">
 		<div class="ui-state-highlight ui-corner-all" style="margin-top: 20px; padding:0.7em; height: 38px;">
-			<p class="alerta">Você deve digitar pelo menos um dos campos de busca.</p>
+			<p class="alerta">Deixe tudo em branco para mostrar todos.</p>
 		</div>
 	</div>
 </div>
@@ -78,6 +79,7 @@
 
 <!-- Inicio - Dialog cadastro -->
 <div id="cadastrar_cliente" title="Cadastrar cliente" class="hide">
+    
 	<div id="pessoa_select" style="display: absolute; float: right; font-size: 16px; font-weight: bold;">
 		Física
 	</div>
@@ -112,62 +114,40 @@
 				<td><input type="text" style="width: 95%" name="cpf" id="cpf" value="" class="text ui-widget-content ui-corner-all" /></td>
 				<td><input type="text" style="width: 100%" name="rg" id="rg" value="" class="text ui-widget-content ui-corner-all" /></td>
 			</tr>
-			<tr><td colspan="2"><label>Endereço</label><br></td></tr>
-			<tr><td colspan="2"><input type="text" name="endereco" id="endereco" class="text ui-widget-content ui-corner-all" style="width: 100%"/></td></tr>
-		</table>
+                        		</table>
+
 		<table class="boxDialog">
-			<tr>
+                    <tr>
+                        <td><label>CEP</label></td>
 				<td width="60px"><label>Numero</label></td>
-				<td width="200px"><label>Complemento</label></td>
-				<td><label>CEP</label></td>
+				<td width="150px"><label>Complemento</label></td>
+				
 			</tr>
 			<tr>
+                            <td><input type="text" style="width: 80%" name="cep" id="cep" value="" class="text ui-widget-content ui-corner-all" /></td>
 				<td><input type="text" style="width: 50px" name="numero" id="numero" value="" class="text ui-widget-content ui-corner-all" onkeypress='return somenteNumeros(event)'/></td>
 				<td><input type="text" style="width: 95%" name="complemento" id="complemento" value="" class="text ui-widget-content ui-corner-all" /></td>
-				<td><input type="text" style="width: 100%" name="cep" id="cep" value="" class="text ui-widget-content ui-corner-all" /></td>
+				
 			</tr>
-		</table>
-		<table class="boxDialog">
-		<tr>
-			<td width="220px"><label>Estado</label></td>
-			<td width="220px"><label>Cidade</label></td>
-		</tr>
-		<tr>
-			<td>
-				<select name="Estado" id="Estado" style="width: 95%; border: 1px solid #A6C9E2;">
-					<option value="0" selected="selected">--</option>
-					<option value="1">Acre</option>
-					<option value="2">Alagoas</option>
-					<option value="3">Amapá</option>
-					<option value="4">Amazonas</option>
-					<option value="5">Bahia</option>
-					<option value="6">Ceará</option>
-					<option value="7">Distrito Federal</option>
-					<option value="8">Espírito Santo</option>
-					<option value="9">Goiás</option>
-					<option value="10">Maranhão</option>
-					<option value="11">Mato Grosso</option>
-					<option value="12">Mato Grosso do Sul</option>
-					<option value="13">Minas Gerais</option>
-					<option value="14">Pará</option>
-					<option value="15">Paraíba</option>
-					<option value="16">Paraná</option>
-					<option value="17">Pernambuco</option>
-					<option value="18">Piauí</option>
-					<option value="19">Rio de Janeiro</option>
-					<option value="20">Rio Grande do Norte</option>
-					<option value="21">Rio Grande do Sul</option>
-					<option value="22">Rondônia</option>
-					<option value="23">Roraima</option>
-					<option value="24">Santa Catarina</option>
-					<option value="25">São Paulo</option>
-					<option value="26">Sergipe</option>
-					<option value="27">Tocantins</option>
-				</select>
-			</td>
-			<td><select name="Cidade" id="Cidade" cid="" style="width: 100%; border: 1px solid #A6C9E2;"></select></td>
-		</tr>
-		</table><br>
+                    			<tr>
+                                            <td colspan="3"><label>Endereço</label><br></td>
+                                        
+                                        </tr>
+			<tr><td colspan="3"><input type="text" name="endereco" id="endereco" class="text ui-widget-content ui-corner-all" style="width: 100%"/></td></tr>
+
+			
+		
+			<tr>
+				<td width="200px"><label>Bairro</label></td>
+				<td width="250px"><label>Cidade</label></td>
+				<td><label>Estado</label></td>
+			</tr>
+			<tr>
+				<td colspan="1"><input type="text" style="width: 90%" name="bairro" id="bairro" value="" class="text ui-widget-content ui-corner-all" onkeypress='return somenteNumeros(event)'/></td>
+				<td colspan="1"><input type="text" style="width: 90%" name="cidade" id="cidade" value="" class="text ui-widget-content ui-corner-all" /></td>
+				<td colspan="1"><input type="text" style="width: 70%" name="estado" id="estado" value="" class="text ui-widget-content ui-corner-all" /></td>
+			</tr>
+                        <br>
 		<table class="boxDialog">
 			<tr>
 					<td style="width: 170px;">Telefone</td>

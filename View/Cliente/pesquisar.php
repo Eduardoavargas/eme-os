@@ -33,9 +33,15 @@
 								$dados = $cliente->getClienteCpfOrCnpj($cliente_cpf);
 							}
 						}
-						else{
-							return AlertaMsg("Você deve digitar pelo menos um campo de busca!");
-						}
+						 if($_REQUEST['ClienteCpf_pesq']==null && $_REQUEST['ClienteNome_pesq']==null){
+                                                  	include_once("../Model/Cliente.php");
+							//$cliente_cpf = $_REQUEST['ClienteCpf_pesq'];
+							$cliente1 = new Cliente();
+							$dados = $cliente1->getClienteNomeAlls();
+						}else {
+  return AlertaMsg2("Erro BD01\n Você tem que digitar somente um dos campos (nome ou CPF)\n ou não digite nada para mostrar todos");
+                                                }
+                                               
 						if(isset($dados) && count($dados)>0){
 						foreach($dados as $row){
 					?>
@@ -70,6 +76,7 @@
 					</tr>
 					<? }}
 					else{
+                                                     
 						echo '<tr><td style="text-align: center"><b>Nenhum cliente encontrado !</b></td></tr>';
 					}?>
 				</table>

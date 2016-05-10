@@ -80,11 +80,14 @@ foreach ($aguardando as $row) { ?>
                     <label> Ano/Modelo</label>: <? echo $OsVeiculoAnoModelo = $row['OsVeiculoAnoModelo']; ?> 
                         <a href="?page=OS&action=ver&OsId=<? echo $OsId = $row['OsId']; ?> " alt="Ver OS"><img src="./images/ver_os2.png" class="ver_os"/></a>
                 </div>
-                <?php $ii++;
+                <?php //$ii++;
+ if (++$ii == 5) {
+break;
+    }
 } ?>
         </div>
         <div id="ultimos_servicos" class="grid_8 ui-widget-content ui-corner-all">
-            <div class="title ui-widget-header ui-corner-all">Ultimos Serviços (Entregues)</div>
+            <div class="title ui-widget-header ui-corner-all">Ultimos (5) Serviços (Entregues)</div>
 <? $iii = 0;
 foreach ($fechada as $row) : ?>
                 <div class="<?php echo ($iii % 2) ? 'em_aberto_item gray' : 'em_aberto_item white'; ?>">
@@ -104,7 +107,10 @@ foreach ($fechada as $row) : ?>
                     <label> Ano/Modelo</label>: <? echo $OsVeiculoAnoModelo = $row['OsVeiculoAnoModelo']; ?> 
                         <a href="?page=OS&action=ver&OsId=<? echo $OsId = $row['OsId']; ?> " alt="Ver OS"><img src="./images/ver_os2.png" class="ver_os"/></a>
                 </div>
-    <?php $iii++;
+    <?php //$iii++;
+ if (++$iii == 5) {
+        break;
+    }
 endforeach; ?>
 
 

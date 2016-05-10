@@ -14,7 +14,7 @@ $('document').ready(function(){
 				$("#btn-login").html('Validando ...');
 			},
 			success :  function(response){						
-				if(response.codigo === "1"){	
+				if(response.codigo == "1"){	
 					$("#btn-login").html('Entrar');
 					$("#login-alert").css('display', 'none');
 					window.location.href = "./View";

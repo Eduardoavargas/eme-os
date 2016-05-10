@@ -2,6 +2,21 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/Applications/XAMPP/htdocs/EME/eme-os/View/OS/nova.php</file>
+            <file>file:/Applications/XAMPP/htdocs/EME/eme-os/View/Principal/dialogs.php</file>
+            <file>file:/Applications/XAMPP/htdocs/EME/eme-os/View/OS/cadastrar.php</file>
+            <file>file:/Applications/XAMPP/htdocs/EME/eme-os/Util/buscaCep.php</file>
+            <file>file:/Applications/XAMPP/htdocs/EME/eme-os/View/Principal/header.php</file>
+            <file>file:/Applications/XAMPP/htdocs/EME/eme-os/View/Principal/footer.php</file>
+            <file>file:/Applications/XAMPP/htdocs/EME/eme-os/Util/Util.php</file>
+            <file>file:/Applications/XAMPP/htdocs/EME/eme-os/View/Principal/Index.php</file>
+            <file>file:/Applications/XAMPP/htdocs/EME/eme-os/View/js/cep.js</file>
+            <file>file:/Applications/XAMPP/htdocs/EME/eme-os/Util/placa.py</file>
+            <file>file:/Applications/XAMPP/htdocs/EME/eme-os/Util/buscaPlaca.php</file>
+            <file>file:/Applications/XAMPP/htdocs/EME/eme-os/View/teste/teste1.php</file>
+            <file>file:/Applications/XAMPP/htdocs/EME/eme-os/View/teste/placa.php</file>
+            <file>file:/Applications/XAMPP/htdocs/EME/eme-os/View/teste/placa.py</file>
+        </group>
     </open-files>
 </project-private>

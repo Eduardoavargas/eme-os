@@ -13,6 +13,7 @@ class Cliente extends Model{
 	public $ClienteEndNumero; //Numero da Casa
 	public $ClienteEndComplemento; //Complemento de Endere�o
 	public $ClienteCidade;
+        public $ClienteBairro;
 	public $ClienteEstado;
 	public $ClienteTipo; //Física ou Jurídica
 	public $ClienteObs; //Observações
@@ -24,7 +25,7 @@ class Cliente extends Model{
 		$dados_busca = array('ClienteNome'=>$this->getNome());
 		
 		$dados = array('ClienteNome'=>$this->getNome(),'ClienteNascimento'=>dataTOdb($this->getNascimento()),'ClienteSexo'=>$this->getSexo(),'ClienteCpfOrCnpj'=>$this->getCpfOrCnpj(),'ClienteRg'=>$this->getRg(),'ClienteTelefone'=>$this->getTelefone(),'ClienteCelular'=>$this->getCelular(),'ClienteCep'=>$this->getCep(),'ClienteEndereco'=>$this->getEndereco(),'ClienteEndNumero'=>$this->getNumero(),'ClienteEndComplemento'=>$this->getComplemento(),'ClienteEstado'=>$this->getEstado(),'ClienteCidade'=>$this->getCidade(),'ClienteTipo'=>$this->getTipo(),'ClienteObs'=>$this->getObs(),'ClienteCadDate'=>date('Y-m-d'));
-		return $this->sql('INSERT INTO cliente (ClienteNome,ClienteNascimento,ClienteSexo,ClienteCpfOrCnpj,ClienteRg,ClienteTelefone,ClienteCelular,ClienteCep,ClienteEndereco,ClienteEndNumero,ClienteEndComplemento,ClienteEstado,ClienteCidade,ClienteTipo,ClienteObs,ClienteCadDate) VALUES (:ClienteNome,:ClienteNascimento,:ClienteSexo,:ClienteCpfOrCnpj,:ClienteRg,:ClienteTelefone,:ClienteCelular,:ClienteCep,:ClienteEndereco,:ClienteEndNumero,:ClienteEndComplemento,:ClienteEstado,:ClienteCidade,:ClienteTipo,:ClienteObs,:ClienteCadDate)', $dados);
+		return $this->sql('INSERT INTO cliente (ClienteNome,ClienteNascimento,ClienteSexo,ClienteCpfOrCnpj,ClienteRg,ClienteTelefone,ClienteCelular,ClienteCep,ClienteEndereco,ClienteEndNumero,ClienteEndComplemento,ClienteEstado,ClienteCidade,ClienteBairro,ClienteTipo,ClienteObs,ClienteCadDate) VALUES (:ClienteNome,:ClienteNascimento,:ClienteSexo,:ClienteCpfOrCnpj,:ClienteRg,:ClienteTelefone,:ClienteCelular,:ClienteCep,:ClienteEndereco,:ClienteEndNumero,:ClienteEndComplemento,:ClienteEstado,:ClienteCidade,:ClienteBairro,:ClienteTipo,:ClienteObs,:ClienteCadDate)', $dados);
 		
 	}
 	public function cadPessoaJuridica(){
@@ -43,6 +44,11 @@ class Cliente extends Model{
 		$query = "SELECT ClienteId,ClienteNome,ClienteCpfOrCnpj,ClienteTipo,ClienteObs FROM cliente WHERE ClienteNome LIKE :ClienteNome ORDER BY ClienteNome";
 		$dados = array('ClienteNome'=>$nome."%");
 		return $this->sqlAll($query,$dados);
+	}
+        	public function getClienteNomeAlls(){
+		$query = "SELECT * FROM cliente WHERE 1";//WHERE  :ClienteId SELECT ClienteId,ClienteNome,ClienteCpfOrCnpj,ClienteTipo,ClienteObs FROM cliente  ORDER BY ClienteNome";
+		//$dados = array('ClienteNome'=>$nome."%");
+		return $this->onlySql($query);
 	}
 	
 	public function getClienteCpfOrCnpj($cpforcnpj){
@@ -172,4 +178,13 @@ class Cliente extends Model{
 	function setObs($ClienteObs){
 		$this->ClienteObs = $ClienteObs;
 	}
+        function getClienteBairro() {
+            return $this->ClienteBairro;
+        }
+
+        function setClienteBairro($ClienteBairro) {
+            $this->ClienteBairro = $ClienteBairro;
+        }
+
+
 }
